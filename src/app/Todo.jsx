@@ -75,7 +75,7 @@ export const Todo = () => {
     <>
       <span className="title">✦ TODO</span>
       <p className="subTitle">항상 열심히 하는 당신에게 박수를 👏</p>
-      <input className="inputTodo" ref={inputRef} type="text" placeholder="Something to do?" />
+      <input className="inputTodo" ref={inputRef} type="text" placeholder="할 일이 있나요?" />
       <button
         onClick={() => {
           if (inputRef.current.value) {
@@ -88,16 +88,7 @@ export const Todo = () => {
           }
         }}
       >
-        Add It!
-      </button>
-
-      <button
-        onClick={() => {
-          console.log(todos);
-          console.log(localStorage.getItem("todoItems"));
-        }}
-      >
-        dumb
+        추가하기
       </button>
 
       <button
@@ -108,9 +99,8 @@ export const Todo = () => {
           numOfItems.current = 0;
         }}
       >
-        I did Everything!!!
+        싹 다했어요 😎
       </button>
-
       <TodoList todos={todos} />
     </>
   );
