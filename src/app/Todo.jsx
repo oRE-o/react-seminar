@@ -9,7 +9,7 @@ export const Todo = () => {
 
   const addItem = (id, text) => {
     setTodos((curr) => {
-      return [...curr, { id, text }];
+      return [...curr, { isChecked: false, id, text }];
     });
   };
 
@@ -22,12 +22,32 @@ export const Todo = () => {
     console.log(todos);
   };
 
+  const isCheckedUpdate = (now, text) => {
+    setTodos((curr) => {
+      let temp = curr.map((i) => {
+        if (i.text === text) {
+          return { isChecked: !now, id: "todoItems", text };
+        } else {
+          return i;
+        }
+      });
+      return temp;
+    });
+  };
+
   const TodoList = ({ todos }) => {
     return (
       <ul className="TodoList">
         {todos.map((todo) => {
           return (
             <li key={todo.text}>
+              <input
+                type="checkbox"
+                checked={todo.isChecked}
+                onClick={() => {
+                  isCheckedUpdate(todo.isChecked, todo.text);
+                }}
+              ></input>
               {todo.text}{" "}
               <button onClick={() => deleteItem(todo.text)} className="delete">
                 X
