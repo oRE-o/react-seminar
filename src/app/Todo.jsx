@@ -40,17 +40,19 @@ export const Todo = () => {
       <ul className="TodoList">
         {todos.map((todo) => {
           return (
-            <li key={todo.text}>
+            <li key={todo.text} className="todoItems">
               <input
+                id={todo.text}
                 type="checkbox"
-                checked={todo.isChecked}
+                className="todoCheckbox"
+                defaultChecked={todo.isChecked}
                 onClick={() => {
                   isCheckedUpdate(todo.isChecked, todo.text);
                 }}
               ></input>
-              {todo.text}{" "}
-              <button onClick={() => deleteItem(todo.text)} className="delete">
-                X
+              <label htmlFor={todo.text}>{todo.text} </label>
+              <button onClick={() => deleteItem(todo.text)} className="todoX close">
+                ✕
               </button>
             </li>
           );
@@ -71,10 +73,9 @@ export const Todo = () => {
 
   return (
     <>
-      <span className="title">TODO List</span>
-      <p>You have to clear all of them...</p>
-
-      <input ref={inputRef} type="text" />
+      <span className="title">✦ TODO</span>
+      <p className="subTitle">항상 열심히 하는 당신에게 박수를 👏</p>
+      <input className="inputTodo" ref={inputRef} type="text" placeholder="Something to do?" />
       <button
         onClick={() => {
           if (inputRef.current.value) {

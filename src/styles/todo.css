@@ -1,0 +1,94 @@
+.title {
+    font-size: 40px;
+    font-weight: 700;
+}
+.subTitle {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 10px 0px;
+}
+
+.TodoList {
+    margin-top: 20px;
+    width: max(500px, 70%);
+    padding: 40px;
+    height: 90%;
+    overflow: scroll;
+    border-radius: 20px;
+    background-color: rgb(255, 245, 231);
+}
+
+button {
+    font-weight: 600;
+    border: 0;
+    outline: none;
+    padding: 8px ;
+    background-color: #ffbb5d;
+    border-radius: 100px;
+    margin: 6px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff9500;
+    transition: 0.3s;
+}
+
+
+.inputTodo {
+    width: 300px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+}
+
+.inputTodo:hover {
+    background-color: #d3d3d3;
+    transition: 0.3s;
+}
+
+.todoItems {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 208, 132);
+    padding: 10px;
+    width: 70%;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+label {
+    text-align: center;
+    margin-right: auto;
+}
+
+.todoCheckbox {
+    zoom: 1.4;
+    margin-right: 10px;
+    outline: none;
+}
+
+:root {
+	accent-color: rgb(246, 133, 28);
+}
+.todoX {
+    margin-right: 10px;
+    padding: 5px 10px !important;
+    width: fit-content;
+    height: fit-content ; 
+    border-radius: 100px;
+    border: none;
+    background-color: #ffe9ca;
+    color: rgb(255, 145, 0);
+    transition: 0.3s;
+}
+.todoX:hover {
+    background-color: #ffd8a2;
+    color: rgb(255, 145, 0);
+}
